@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="49.57803mm"
+   height="44.018559mm"
+   viewBox="0 0 49.57803 44.018559"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlnsSvg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <rect
+       x="44.158314"
+       y="435.52219"
+       width="184.42589"
+       height="37.231518"
+       id="rect13" />
+    <rect
+       x="68.29715"
+       y="548.7948"
+       width="154.72629"
+       height="58.022362"
+       id="rect14" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-0.33107522,-0.77958903)">
+    <path
+       id="path1"
+       style="fill:none;fill-opacity:0.521368;stroke:#38445D;stroke-width:0.444357;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+       d="M 3.66699,6.2810324 0.52195,1.0017645 v 0 l 49.19113,0.25564 -2.67997,5.0234889" />
+    <path
+       id="path15"
+       style="fill:none;fill-opacity:0.521368;stroke:#38445D;stroke-width:0.444357;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+       d="M 34.00646,30.698707 26.54522,44.684434 18.21343,30.698692" />
+    <text
+       xmlSpace="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-4.070064,-99.315723)"
+       id="text8"
+       style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:26.6667px;font-family:Raleway;-inkscape-font-specification:'Raleway Thin';letter-spacing:6px;white-space:pre;shape-inside:url(#rect13);fill:#38445D;fill-opacity:1;stroke:#000000;stroke-width:1.88976;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="44.158203"
+         y="460.20635"
+         id="tspan8"><tspan
+           style="font-weight:normal;-inkscape-font-specification:Raleway;fill:#38445D;stroke:none"
+           id="tspan7">immerse</tspan></tspan></text>
+    <path
+       style="fill:none;fill-opacity:0.521368;stroke:#38445D;stroke-width:0.363745;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1.38428,10.831461 c 0,0 2.74435,-1.9568096 6.02584,-1.9568096 3.28148,0 5.67179,2.5154996 8.95326,2.5154996 3.28149,0 5.7634,-2.5154996 9.04488,-2.5154996 3.28148,0 5.76339,2.5154996 9.04488,2.5154996 3.28147,0 5.67179,-2.5154996 8.95326,-2.5154996 3.28149,0 6.02583,1.9568096 6.02583,1.9568096"
+       id="path8" />
+    <text
+       xmlSpace="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-4.265813,-122.90298)"
+       id="text12"
+       style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-size:8px;font-family:Raleway;-inkscape-font-specification:'Raleway Thin';letter-spacing:5px;word-spacing:1px;white-space:pre;shape-inside:url(#rect14);shape-padding:0;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.88976;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="68.296875"
+         y="556.20037"
+         id="tspan10"><tspan
+           style="font-weight:normal;-inkscape-font-specification:Raleway"
+           id="tspan9">
+</tspan></tspan><tspan
+         x="68.296875"
+         y="568.66889"
+         id="tspan12"><tspan
+           style="fill:#38445D;font-weight:500;font-size:10.6667px;-inkscape-font-specification:'Raleway Medium'"
+           id="tspan11">wellbeing</tspan></tspan></text>
+    <path
+       
+       style="fill:none;fill-opacity:0.521368;stroke:#38445D;stroke-width:0.363745;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1.38428,14.535645 c 0,0 2.74435,-1.95681 6.02584,-1.95681 3.28148,0 5.67179,2.5155 8.95326,2.5155 3.28149,0 5.7634,-2.5155 9.04488,-2.5155 3.28148,0 5.76339,2.5155 9.04488,2.5155 3.28147,0 5.67179,-2.5155 8.95326,-2.5155 3.28149,0 6.02583,1.95681 6.02583,1.95681"
+       id="path12" />
+  </g>
+</svg>
