@@ -20,7 +20,7 @@ router.get('/dashboard/classes-list', getClasses)
 router.post('/dashboard/classes-list', requireAuth, requireAdmin, createClass)
 
 //DELETE class
-// router.delete('/dashboard/classes-list/:id', requireAuth, deleteClass)
+router.delete('/dashboard/classes-list/:id', requireAuth, deleteClass)
 
 //UPDATE claa
 
