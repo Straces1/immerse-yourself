@@ -59,7 +59,7 @@ const ContactForm = ({className}) => {
       try {
         const response = await axios.post('http://localhost:3003/api/message', formik.values)
         if (response.status === 200) {
-          setRespMessage(response.data.message, ', refresh the page to see the new class.')
+          setRespMessage(response.data.message)
           setShowPopup(true)
           setLoading(false)
           formik.resetForm()

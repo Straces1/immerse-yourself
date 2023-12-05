@@ -40,10 +40,9 @@ const Events = ({className}) => {
           return (
             <div key={event._id} className='event'>
               <FlexContainer className="event-content">
-                <img src="http://localhost:3003/events/event1.webp" alt="" />
+                <img src={`http://localhost:3003/${event.picture}`} alt="" /> {/* this doesnt work */}
                 <div className="right-col">
                   <h2>{event.title}</h2>
-                  {/* <p className='date'><Moment format='YYYY/MM/DD HH:mm'>{event.date}</Moment></p> */}
                   <p className="date">{dateFormater(event.date)}</p>
                   <p className='desc'>{event.desc}</p>
                   

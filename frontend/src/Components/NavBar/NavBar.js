@@ -13,12 +13,13 @@ const NavBar = ({className}) => {
     const position = document.getElementById(id).getBoundingClientRect().top
     const offset = 100
     const finalPosition = window.pageYOffset + position - offset
+    
     if (position) {
       window.scrollTo({
         top: finalPosition,
         behavior: 'smooth'
       })
-    }
+    } 
   }
 
   return (

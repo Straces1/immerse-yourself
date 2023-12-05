@@ -5,10 +5,12 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
+const path = require('path')
 
 // routes
 const eventsRoutes = require('./routes/eventsRoutes')
 const classesRoutes = require('./routes/classesRoutes')
+const userRoutes = require('./routes/userRoutes')
 
 const app = express()
 
@@ -17,11 +19,13 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static('public'))
 app.use(bodyParser.json())
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
 
 //routes
 app.use('/api', eventsRoutes)
 app.use('/api', classesRoutes)
+app.use('/api', userRoutes)
 
 // emailer -- it's here just for now -- migrate later
 app.post('/api/message', async (req, res) => {

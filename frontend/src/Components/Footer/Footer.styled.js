@@ -13,11 +13,27 @@ const FooterStyled = styled(Footer)`
         font-size: 14pt;
         
     }
-    .login {
+    .login, .admin {
         margin-left: auto;
         color: #fff;
         font-size: 20pt;
-        margin-bottom: 10px;
+        font-weight: 500;
+        
+    }
+    .admin {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+    .admin button {
+        border: none;
+        color: #fff;
+        font-size: 20pt;
+        padding: 0;
+        background: none;
+        cursor: pointer;
+       
+        
     }
     a {
         color: #fff;
@@ -26,7 +42,7 @@ const FooterStyled = styled(Footer)`
         
         
     }
-    a:hover{
+    .admin button:hover, a:hover{
         
         transform: translateY(-3px);
         
