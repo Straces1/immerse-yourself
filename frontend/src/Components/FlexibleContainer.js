@@ -4,7 +4,7 @@ const FlexContainer = styled.div`
     width: 70vw;
     margin: 0 auto;
     position: relative;
-    min-height: 65vh;
+    
     @media (max-width: 1100px) {
             width: 75vw;
         }

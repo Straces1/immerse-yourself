@@ -14,7 +14,7 @@ const EventsDash = styled(Events)`
         width: 58%;
     }
     .right {
-        padding-left:5vw;
+        padding-left: 15px;
     }
     .left h3 {
         margin-top: 0;
@@ -54,9 +54,10 @@ const EventsDash = styled(Events)`
         opacity: 0.8;
     }
     .buttons {
+        margin-top: 10px;
         display: flex;
         flex-direction: row;
-        gap: 33px;
+        gap: 10px;
     }
     .buttons button {
         justify-content: center;
@@ -75,6 +76,26 @@ const EventsDash = styled(Events)`
         border: none;
         color: #fff;
     }
+    .err {
+        color: red;
+        margin-top: -8px;
+    }
+    .item {
+        display: flex;
+        flex-direction: column;
+    }
+    .item-top {
+        display: flex;
+        flex-direction: row;
+    }
+    .item img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-top: 0px;
+        border-radius: 10px;
+    }
+    
 `
 
 export default EventsDash

@@ -15,7 +15,7 @@ const Dashboard = ({className}) => {
           <div>
             <Link to='/dashboard/classes-list'>Classes</Link>
             <Link to='/dashboard/events-list'>Events</Link>
-            <Link to='/dashboard/email-list'>Email List</Link>
+            {/* <Link to='/dashboard/email-list'>Email List</Link> */}
             <Link to='/dashboard/create-user'>Create User</Link>
           </div>
           <div></div>

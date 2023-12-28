@@ -40,7 +40,7 @@ const Events = ({className}) => {
           return (
             <div key={event._id} className='event'>
               <FlexContainer className="event-content">
-                <img src={`http://localhost:3003/${event.picture}`} alt="" /> {/* this doesnt work */}
+                <img src={`http://localhost:3003/${event.picture}`} alt="" />
                 <div className="right-col">
                   <h2>{event.title}</h2>
                   <p className="date">{dateFormater(event.date)}</p>
@@ -53,6 +53,7 @@ const Events = ({className}) => {
             </div>
           )
         })}
+        
       </div>
 
         <ContactForm />

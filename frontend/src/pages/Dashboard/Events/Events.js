@@ -3,17 +3,11 @@ import axios from 'axios'
 import { useAuthContext } from '../../../hooks/useAuthContext'
 
 import ConfirmWindow from '../../../Components/ConfirmWindow/ConfirmWindow.styled'
+import { useFormik } from 'formik'
+import validationSchema from './eventForm/validationSchema'
 
 const Events = ({className}) => {
     const [events, setEvents] = useState([])
-    const [eventData, setEventData] = useState({
-      title: '',
-      snippet: '',
-      desc: '',
-      date: '',
-      picture: null,
-
-    })
     const {user} = useAuthContext()
     const [showDeleteModal, setShowDeleteModal] = useState(false);
     const [eventToDelete, setEventToDelete] = useState(null)
@@ -38,43 +32,44 @@ const Events = ({className}) => {
   }, [user])
 
   // form logic
-  //handle file input change
-  const handleInputChange = (e) => {
-    const { name, value, files } = e.target
-    setEventData({
-      ...eventData,
-      [name]: files ? files[0] : value
-    })
-  }
-  // submit function
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    // FormData is a built-in JavaScript object that provides a way to easily construct a set of key/value pairs representing 
-    // form fields and their values. It is commonly used to create and send multipart/form-data requests, which is the format 
-    // used when uploading files through a form.
-
-    // This object will be used to append the key-value pairs representing the data you want to send in the request
-    const postData = new FormData()
-    postData.append('title', eventData.title)
-    postData.append('desc', eventData.desc)
-    postData.append('snippet', eventData.snippet)
-    postData.append('date', eventData.date)
-    postData.append('picture', eventData.picture)
-
-    try {
-      await axios.post('http://localhost:3003/api/dashboard/events', postData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      })
-      alert('Event created successfully!')
-      fetchEvents()
-      setEventData({title: '', desc: '', snippet: '', date: '', picture: null})
-    } catch (error) {
-      console.log(error)
-      alert('Error creating event')
+  // formik
+  const formik = useFormik({
+    initialValues: {
+      title: '',
+      snippet: '',
+      desc: '',
+      date: '',
+      picture: null,
+    },
+    validationSchema,
+    onSubmit: async (values) => {
+      
+      // FormData is a built-in JavaScript object that provides a way to easily construct a set of key/value pairs representing 
+      // form fields and their values. It is commonly used to create and send multipart/form-data requests, which is the format 
+      // used when uploading files through a form.
+  
+      // This object will be used to append the key-value pairs representing the data you want to send in the request
+      try {
+        const postData = new FormData()
+        postData.append('title', values.title)
+        postData.append('desc', values.desc)
+        postData.append('snippet', values.snippet)
+        postData.append('date', values.date)
+        postData.append('picture', values.picture)
+        await axios.post('http://localhost:3003/api/dashboard/events', postData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        })
+        alert('Event created successfully!')
+        fetchEvents()
+        formik.resetForm()
+      } catch (error) {
+        console.log(error)
+        alert('Error creating event')
+      }
     }
-  }
+  })
 
   // deletion logic
 
@@ -113,13 +108,25 @@ const Events = ({className}) => {
             {events && events.map((event, index) => {
               return (
                   <div key={event._id} className="item">
-                      <h3>{event.title}</h3>
-                      <p className="date">{event.day}</p>
-                      <p className="desc">{event.desc}</p>
-                      <div className="buttons">
-                          <button disabled={unabled} title="Only admin can edit classes">Edit</button>
-                          <button disabled={unabled} title="Only admin can delete classes" onClick={() => handleDeleteClick(event)}>Delete</button>
+
+                    <div className="item-top">
+                      <div className="left">
+                        <img src={`http://localhost:3003/${event.picture}`} alt="" />
                       </div>
+
+                      <div className="right">
+                          <h3>{event.title}</h3>
+                          <p className="date">{event.day}</p>
+                          <p className="desc">{event.desc}</p>
+                          
+                      </div>
+                    </div>
+
+                    <div className="buttons">
+                            <button disabled={unabled} title="Only admin can edit classes">Edit</button>
+                            <button disabled={unabled} title="Only admin can delete classes" onClick={() => handleDeleteClick(event)}>Delete</button>
+                        </div>
+                      
                   </div>
                   
               )
@@ -134,45 +141,65 @@ const Events = ({className}) => {
 
         <div className="right">
             <h2>Add a new event</h2>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={formik.handleSubmit}>
                     
                     <input 
                       type="text" 
                       name="title" id="title" 
                       placeholder='Title'
-                      value={eventData.title}
-                      onChange={handleInputChange}
+                      value={formik.values.title}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
                     />
+                    {formik.touched.title && formik.errors.title && (
+                      <span className='err'>{formik.errors.title}</span>
+                    )}
 
                     <input 
                       type='text' 
                       name='snippet'
                       placeholder='Snippet'
-                      value={eventData.snippet}
-                      onChange={handleInputChange}
+                      value={formik.values.snippet}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
                     />
+                    {formik.touched.snippet && formik.errors.snippet && (
+                      <span className='err'>{formik.errors.snippet}</span>
+                    )}
 
                     <textarea 
                       name="desc" 
                       cols="30" rows="10" 
                       placeholder='Description'
-                      value={eventData.desc}
-                      onChange={handleInputChange}
+                      value={formik.values.desc}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
                     ></textarea>
+                    {formik.touched.desc && formik.errors.desc && (
+                      <span className='err'>{formik.errors.desc}</span>
+                    )}
 
                     <input 
                       type="datetime-local" 
                       name="date" 
                       placeholder='Date and time'
-                      value={eventData.date}
-                      onChange={handleInputChange}
+                      value={formik.values.date}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
                     />
+                    {formik.touched.date && formik.errors.date && (
+                      <span className='err'>{formik.errors.date}</span>
+                    )}
 
                     <input 
                       type='file'
                       name='picture'
-                      onChange={handleInputChange}
+                      onChange={(event) => formik.setFieldValue('picture', event.currentTarget.files[0])}
+                      onBlur={formik.handleBlur}
                     />
+                    {formik.touched.picture && formik.errors.picture && (
+                      <span className='err'>{formik.errors.picture}</span>
+                    )}
                     
                     
                     <button type="submit">Submit</button>

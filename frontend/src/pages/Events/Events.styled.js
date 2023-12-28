@@ -35,6 +35,7 @@ flex-direction: column;
     }
     .events {
         margin-bottom: 10vh;
+        padding-top: 30px;
 
 
     }
@@ -43,17 +44,22 @@ flex-direction: column;
         flex-direction: column;
         
     }
+    .right-col {
+        padding-top: 20px;
+    }
     .event-content {
         display: flex;
         gap: 15vw;
         margin-bottom: 20px;
+        height: 100%;
 
     }
     .event-content img {
-        width: 289px;
+        min-width: 289px;
+        max-width: 289px;
         height: 262px;
         object-fit: cover;
-        margin: auto auto;
+        margin: 40px auto;
         border-radius: 10px;
     }
     .event-content h2 {
@@ -71,6 +77,7 @@ flex-direction: column;
     }
     .desc {
         font-size: 16pt;
+        margin: 0;
     }
 
 

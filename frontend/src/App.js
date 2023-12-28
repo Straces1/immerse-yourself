@@ -12,7 +12,7 @@ import Login from './pages/Login/Login.styled'
 import Dashboard from './pages/Dashboard/Dashboard.styled'
 import ClassesDash from './pages/Dashboard/Classes/Classes.styled'
 import EventsDash from './pages/Dashboard/Events/Events.styled'
-import EmailListDash from './pages/Dashboard/EmailList/EmailList.styled'
+// import EmailListDash from './pages/Dashboard/EmailList/EmailList.styled'
 import CreateUser from './pages/Dashboard/CreateUser/CreateUser.styled'
 
 
@@ -45,7 +45,7 @@ function App() {
               <Route index element={<ClassesDash/>}/>
               <Route path='classes-list' element={<ClassesDash/>}/>
               <Route path='events-list' element={<EventsDash/>}/>
-              <Route path='email-list' element={<EmailListDash/>}/>
+              {/* <Route path='email-list' element={<EmailListDash/>}/> */}
               <Route path='create-user' element={<CreateUser />} />
             </Route>
             <Route path='login' element={!user ? <Login /> : <Navigate to='/dashboard' />} />
